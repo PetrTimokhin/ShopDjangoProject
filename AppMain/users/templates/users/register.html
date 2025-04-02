@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link rel="stylesheet"
+          type="text/css"
+          href="{% static 'users/css/login_css.css' %}"
+    />
+</head>
+  <body>
+      <div class="login">
+        <div class="login-screen">
+          <div class="app-title">
+            <h1>Регистрация</h1>
+          </div>
+
+          <div class="login-form">
+            <div class="control-group">
+            <input type="text" class="login-field" value="" placeholder="Имя пользователя" id="login-name">
+            <label class="login-field-icon fui-user" for="login-name"></label>
+            </div>
+
+            <div class="control-group">
+            <input type="text" class="login-field" value="" placeholder="Почта" id="email">
+            <label class="login-field-icon fui-user" for="email"></label>
+            </div>
+
+            <div class="control-group">
+            <input type="password" class="login-field" value="" placeholder="Пароль" id="login-pass">
+            <label class="login-field-icon fui-lock" for="login-pass"></label>
+            </div>
+
+            <a class="btn btn-primary btn-large btn-block" href="#">Зарегистрироваться</a>
+              <div class="login-link-2">
+            <a class="login-link" href="{% url 'login' %}">Уже есть аккаунт?</a>
+              </div>
+          </div>
+         </div>
+      </div>
+  </body>
+</html>
