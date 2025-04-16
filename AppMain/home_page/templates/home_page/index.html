@@ -1,15 +1,21 @@
+{% extends "home_page/base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Страница товаров</title>
-<!--    <link rel="stylesheet" href="{% static 'account_user/css/login_css.css' %}">-->
-</head>
-<body>
-    <h1>Страница товаров</h1>
-<!--<a href="../author/register/">Зарегистрируйтесь!</a>-->
-<a href="{% url 'register' %}">Зарегистрируйтесь!</a>
-<p>Привет, {{ name }} {{ lastname }}</p>
-</body>
-</html>
+
+
+{% block css %}
+<link rel="stylesheet" href='{% static "deps/css/my_footer_css.css" %}'>
+{% endblock css %}
+
+
+{% block content %}
+<h1 class="mt-5 pt-5"><strong>{{ header }}</strong></h1>
+{% endblock content %}
+
+
+{% block footer %}
+    <footer class="py-4 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Home Python Hub Studio 2023</p>
+        </div>
+    </footer>
+{% endblock footer %}

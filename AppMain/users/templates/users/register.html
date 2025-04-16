@@ -11,33 +11,45 @@
 </head>
   <body>
       <div class="login">
-        <div class="login-screen">
-          <div class="app-title">
-            <h1>Регистрация</h1>
-          </div>
+          <form action="" method="post">
+              {% csrf_token %}
+              <div class="login-screen">
+                <div class="app-title">
+                    <h1>Регистрация</h1>
+                </div>
 
-          <div class="login-form">
-            <div class="control-group">
-            <input type="text" class="login-field" value="" placeholder="Имя пользователя" id="login-name">
-            <label class="login-field-icon fui-user" for="login-name"></label>
-            </div>
 
-            <div class="control-group">
-            <input type="text" class="login-field" value="" placeholder="Почта" id="email">
-            <label class="login-field-icon fui-user" for="email"></label>
-            </div>
+                <div class="login-form">
 
-            <div class="control-group">
-            <input type="password" class="login-field" value="" placeholder="Пароль" id="login-pass">
-            <label class="login-field-icon fui-lock" for="login-pass"></label>
-            </div>
+                    <div class="control-group">
+                        <input type="text" class="login-field" value="" placeholder="Имя пользователя" name='username' id="login-name">
+                        <label class="login-field-icon fui-user" for="login-name"></label>
+                    </div>
 
-            <a class="btn btn-primary btn-large btn-block" href="#">Зарегистрироваться</a>
-              <div class="login-link-2">
-            <a class="login-link" href="{% url 'login' %}">Уже есть аккаунт?</a>
+                    <div class="control-group">
+                        <input type="text" class="login-field" value="" placeholder="Почта" name='email' id="email">
+                        <label class="login-field-icon fui-user" for="email"></label>
+                    </div>
+
+                    <div class="control-group">
+                        <input type="password" class="login-field" value="" placeholder="Пароль" name='password' id="login-pass">
+                        <label class="login-field-icon fui-lock" for="login-pass"></label>
+                    </div>
+
+                    <div class="control-group">
+                        <input type="submit" class="btn btn-primary btn-large btn-block" value="Зарегистрироваться">
+                    </div>
+
+
+<!--                <a class="btn btn-primary btn-large btn-block" href="#">Зарегистрироваться</a>-->
+                  <div class="login-link-2">
+                    <a class="login-link" href="{% url 'log' %}">Уже есть аккаунт?</a>
+                  </div>
+
+                </div>
+
               </div>
-          </div>
-         </div>
+          </form>
       </div>
   </body>
 </html>
