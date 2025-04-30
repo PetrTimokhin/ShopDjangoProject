@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from debug_toolbar.toolbar import debug_toolbar_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('users/', include('users.urls')),  # в html - {% url 'users:regiter' %}
+    path('users/', include('users.urls')),
     path('', include('home_page.urls', namespace='home_page')),
     path('catalog/', include('goods.urls', namespace='goods')),
-]
+] + debug_toolbar_urls()

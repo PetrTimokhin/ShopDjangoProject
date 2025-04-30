@@ -1,16 +1,20 @@
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
-from django.shortcuts import render
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Category, Product
+
 import random
+
+from goods.models import Categories
 
 
 def index(request):
+
+    categories = Categories.objects.all()
+
     content = {
         'title': 'Home - Главная страница',
         'header': 'Магазин мебели HOME',
+        'categories': categories,
     }
 
     return render(request, 'home_page/index.html', content)
