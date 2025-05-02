@@ -53,3 +53,11 @@ class Products(models.Model):
 
     def __str__(self):  # для отображения объектов этого класса
         return f'{self.name} Кол-во:{self.quantity} Цена:{self.price}'
+
+    def display_id(self):
+        return f'{self.id:05}'
+
+    def sell_price(self):
+        if self.discount:
+            return round(self.price - self.price * self.discount/100, 2)
+        return self.price

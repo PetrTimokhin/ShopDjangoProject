@@ -9,12 +9,12 @@ from goods.models import Categories
 
 def index(request):
 
-    categories = Categories.objects.all()
+    # categories = Categories.objects.all()
 
     content = {
         'title': 'Home - Главная страница',
         'header': 'Магазин мебели HOME',
-        'categories': categories,
+        # 'categories': categories,
     }
 
     return render(request, 'home_page/index.html', content)
